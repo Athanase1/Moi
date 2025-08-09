@@ -1,0 +1,52 @@
+.project{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+     border: 1px solid rgba(255, 255, 255, 0.1); /* optionnel, léger contour */
+     border-radius: 20px;
+     width: 50%;
+     height: auto;
+     overflow: auto;
+}
+.projectImg{
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.projectImg img{
+    width: auto;
+    height:100%;
+}
+.icons{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+}
+.icons .bi{
+    display: block !important;
+    font-size: 50px;
+    cursor: pointer;
+     background: linear-gradient(145deg, #0d1117, #161b22); /* gradient subtil */
+}
+.icons .bi:hover{
+    background: linear-gradient(90deg, #0d1117, #161b22); /* gradient subtil */
+}
+@media screen and (max-width:768px){
+   .icons .bi{
+    font-size: 15px;
+   }
+   .icons{
+    width: 100%;
+   }
+   h1{
+    font-size: 14px;
+   }
+}
+

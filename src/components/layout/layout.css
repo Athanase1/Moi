@@ -114,6 +114,7 @@ nav li a {
   padding: 5px;
   display: flex;
   column-gap: 0.2rem;
+  align-items: center;
 }
 
 nav li a::after {
@@ -198,6 +199,6 @@ footer {
     row-gap: 1rem;
   }
   nav ul li a {
-    font-size: 14px;
+    font-size: 25px;
   }
 }

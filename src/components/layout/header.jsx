@@ -18,25 +18,25 @@ export default function Header({ affiche, setAffiche }) {
       </div>
       <nav className={affiche ? "": "cache"}>
         <ul>
-          <li>
+          <li onClick={ () => setAffiche(!affiche)} >
             <Link to="/">
               {" "}
               <i className="bi bi-house"></i>Acceuil
             </Link>
           </li>
-          <li>
+          <li onClick={ () => setAffiche(!affiche)}>
             <Link to="/apropos">
               {" "}
               <i className="bi bi-person"></i>À propos
             </Link>
           </li>
-          <li>
+          <li onClick={ () => setAffiche(!affiche)}>
             <Link to="/projects">
               {" "}
               <i className="bi bi-archive"></i>Projects
             </Link>
           </li>
-          <li>
+          <li onClick={ () => setAffiche(!affiche)}>
             <Link to="/contact">
               <i className="bi bi-person-lines-fill"></i>Contact
             </Link>

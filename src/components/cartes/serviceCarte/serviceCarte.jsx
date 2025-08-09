@@ -2,17 +2,14 @@ import "./serviceCarte.css";
 export default function ServiceCarte({ service }) {
   return (
     <div className="serviceCarte-container">
-      <i className={`bi ${service.icon} icon`}></i>
-
+        <div className="icon">
+            <i className={`bi ${service.icon}`}></i>
+        </div>
       <div className="sCorps">
-        <h1>{service.nom}</h1>
-        <ul>
-          {service.services.map((service, index) => (
-            <li key={index}>{service}</li>
-          ))}
-        </ul>
+           <h1>{service.nom}</h1>
+       <p>{service.services}</p>
+          <button>acquérir</button>
       </div>
-      <button>acquérir</button>
     </div>
   );
 }

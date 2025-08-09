@@ -1,4 +1,4 @@
-import { Projects } from "../assets/data/project";
+import { projects } from "../assets/data/project";
 import { Services } from "../assets/data/services";
 import ProjectCarte from "../components/cartes/projectCarte";
 import ServiceCarte from "../components/cartes/serviceCarte/serviceCarte";
@@ -10,7 +10,7 @@ export default function Home(){
       <div className="section">
         <h1 className="h1">Voir mes projects les plus recents</h1>
         <div className="projects">
-          {Projects.map((project) =>(
+          {projects.map((project) =>(
             <ProjectCarte project={project} key={project.id}/>
           ))}
         </div>
