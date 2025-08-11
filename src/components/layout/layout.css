@@ -4,6 +4,15 @@
   margin: 0;
   padding: 0;
 }
+/* Cacher la scrollbar mais garder le scroll */
+::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+* {
+  -ms-overflow-style: none; /* Internet Explorer et Edge */
+  scrollbar-width: none; /* Firefox */
+}
 .Layout {
   display: flex;
   flex-direction: column;
@@ -12,7 +21,7 @@
   min-height: 100vh;
   width: 100%;
   font-family: "Inter", sans-serif;
-  background-color: #0d1117;
+  background: linear-gradient(to top, #0d1117, #161b22); /* gradient subtil */
   color: #c9d1d9;
   position: relative;
   overflow: hidden;
@@ -27,7 +36,6 @@ header {
   justify-content: space-around;
   padding: 1rem;
   position: relative;
- 
 }
 header::after {
   content: "";
@@ -54,7 +62,7 @@ header::after {
 .Logo h1 {
   color: #58a6ff;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 30px !important;
 }
 .Logo h1::after {
   content: "";
@@ -72,6 +80,7 @@ header::after {
   display: inline-block;
   color: #c9d1d9;
   animation: colorWave 2s ease-in-out infinite;
+  font-size: 8px;
 }
 .Logo span:nth-child(1) {
   animation-delay: 0.5s;
@@ -153,6 +162,48 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  background-color: #161b22;
+}
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.social .bi {
+  display: block;
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.2rem;
+}
+.social .bi:hover {
+  background-color: white;
+}
+.footerDiv {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+  
+}
+.footerDiv ul {
+  list-style: none;
+}
+.footerDiv ul li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+#copy {
+  width: 100%;
+  text-align: center;
+}
+.date{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /******************************************************media queries*******************************/
 @media screen and (max-width: 768px) {
@@ -180,10 +231,9 @@ footer {
   .bi {
     display: block;
     font-size: 20px;
-    
   }
   .Logo {
-    width: 90%;
+    width: 100%;
     justify-content: space-between;
   }
   nav {
@@ -201,4 +251,25 @@ footer {
   nav ul li a {
     font-size: 25px;
   }
+  .footerDiv {
+    flex-direction: column;
+    align-items: flex-start !important;
+    width: 100%;
+    gap: .2rem;
+  }
+  .footerDiv ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .date{
+    width: 100%;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  footer{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
 }

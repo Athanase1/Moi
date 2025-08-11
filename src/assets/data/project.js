@@ -90,7 +90,7 @@ export const projects = [
     stack_technique: [
       {
         type: "frontend:",
-        listes: ["React", "Axios", "TailwindCSS"],
+        listes: ["React", "Axios", "CSS"],
       },
       {
         type: " backend:",
@@ -110,10 +110,19 @@ export const projects = [
       "Envoi automatique de courriels de confirmation (via Gmail SMTP)",
       "Variables d’environnement sécurisées pour l’envoi de mails",
     ],
-    objectifs_atteints: [
-      "Automatiser la gestion des commandes",
-      "Réduire les erreurs de communication",
-      "Offrir une expérience client simple et professionnelle",
+    competences_acquises: [
+      "Mise en place d'une API REST performante avec Node.js et Express",
+      "Gestion de l’état et des données côté frontend avec React et Axios",
+      "Utilisation de TailwindCSS pour créer une interface moderne et responsive",
+      "Mise en place d’un système d’e-mails automatisés avec Nodemailer",
+      "Protection des informations sensibles via les variables d’environnement",
+      "Déploiement d’un backend sur Render avec configuration sécurisée",
+    ],
+    defis_releves: [
+      "Assurer la fiabilité de l’envoi des e-mails malgré les limitations de Gmail SMTP",
+      "Structurer le code backend avec séparation claire des routes et contrôleurs",
+      "Gérer correctement la persistance du numéro de téléphone dans le navigateur",
+      "Adapter le système aux contraintes de performances en production",
     ],
   },
 ];

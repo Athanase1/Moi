@@ -7,7 +7,7 @@ export default function Header({ affiche, setAffiche }) {
         navigate("/")
       }}>
         <h1>
-          Athan.<span>d</span>
+          Athan<span>.</span><span>d</span>
           <span>e</span>
           <span>v</span>
         </h1>
