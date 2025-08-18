@@ -30,14 +30,6 @@ export default function Footer(){
             <li>contact</li>
         </ul>
        </div>
-       
-       <div className="projs">
-        <ul>
-            projects récents
-            <li>little lemon</li>
-            <li>Distributions koba global inc</li>
-        </ul>
-       </div>
        <div className="date">
         <p>{timeString}</p>
         <p>{dateString}</p>

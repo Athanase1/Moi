@@ -5,6 +5,15 @@ import iVisual from "../images/icons/visualstudio.jpg";
 import iVite from "../images/icons/vite.png";
 import iMongo from "../images/icons/Mongo.png";
 import iItellij from "../images/icons/intellij.jpg";
+import Ijava from "../images/icons/java.png";
+import Ihtml from "../images/icons/html.png";
+import Ipostgres from "../images/icons/PostgreSql.jpg";
+import Imongo from "../images/icons/Mongo.png";
+import Ibitbucket from "../images/icons/bitbucket.png";
+import IVisStudio from "../images/icons/visualStudio.png";
+import iCsharp from "../images/icons/c-sharp.png";
+import Ijs from "../images/icons/js.png";
+import Isql from "../images/icons/SQL.png";
 import iNode from "../images/icons/node.png";
 import lemon1 from "../images/lemons/lemon1.PNG";
 import lemon2 from "../images/lemons/lemon2.PNG";
@@ -38,20 +47,20 @@ export const projects = [
       lemon9,
       lemon10,
     ],
-    titre: "Système de Réservation en Ligne – Little Lemon",
+    titre:
+      "Système de Réservation en Ligne – Little Lemon développé avec React et Node.js",
     stack_technique: [
-      {
-        type: " frontend:",
-        listes: ["React", "React Router", "Context API", "CSS"],
-      },
-      {
-        type: "backend:",
-        listes: ["Node.js", "Express", "MongoDB (Mongoose)"],
-      },
-      {
-        type: "outils_services:",
-        listes: ["Axios", "LocalStorage", "JWT", "Render"],
-      },
+      "React",
+      "React Router",
+      "Context API",
+      "CSS",
+      "Node.js",
+      "Express",
+      "MongoDB (Mongoose)",
+      "Axios",
+      "LocalStorage",
+      "JWT",
+      "Render",
     ],
     fonctionnalites: [
       "Recherche automatique des réservations par numéro de téléphone (persisté dans localStorage)",
@@ -85,22 +94,19 @@ export const projects = [
     icons: [iconReact, iCss, iExpress, iVisual, iVite, iNode],
     imgs: [koba1, koba2, koba3],
     titre:
-      "Application de Gestion de Commandes – Distributions Kobal Global Inc.",
+      "Application de Gestion de Commandes – Distributions Kobal Global Inc développée avec React,Node.js et Mongoose DB",
 
     stack_technique: [
-      {
-        type: "frontend:",
-        listes: ["React", "Axios", "CSS"],
-      },
-      {
-        type: " backend:",
-        listes: ["Node.js", "Express.js"],
-      },
-      {
-        type: "outils_services:",
-        listes: ["Nodemailer", "Dotenv", "Render.com"],
-      },
+      "React",
+      "Node.js",
+      "Nodemailer",
+      "Dotenv",
+      "Render",
+      "Axios",
+      "Express.js",
+      "CSS",
     ],
+
     fonctionnalites: [
       "Interface utilisateur fluide et responsive",
       "Formulaire de commande client avec validation",
@@ -124,5 +130,128 @@ export const projects = [
       "Gérer correctement la persistance du numéro de téléphone dans le navigateur",
       "Adapter le système aux contraintes de performances en production",
     ],
+  },
+];
+
+export const compentences = [
+  {
+    id: 0,
+    nom: "React js",
+    icon: iconReact,
+    niv: "Avancé",
+    étoile: 4,
+    type: "FrontEnd",
+  },
+  {
+    id: 1,
+    nom: "Node.js",
+    icon: iNode,
+    niv: "Intermédiaire",
+    étoile: 3,
+    type: "BackEnd",
+  },
+  {
+    id: 2,
+    nom: "HTML",
+    icon: Ihtml,
+    niv: "Expert",
+    étoile: 5,
+    type: "FrontEnd",
+  },
+  {
+    id: 3,
+    nom: "Css",
+    icon: iCss,
+    niv: "Expert",
+    étoile: 5,
+    type: "FrontEnd",
+  },
+  {
+    id: 4,
+    nom: "Java",
+    icon: Ijava,
+    niv: "Avancé",
+    étoile: 4,
+    type: "BackEnd",
+  },
+  {
+    id: 5,
+    nom: "Express js",
+    icon: iExpress,
+    niv: "Avancé",
+    étoile: 4,
+    type: "BackEnd",
+  },
+  {
+    id: 6,
+    nom: "Intellij",
+    icon: iItellij,
+    niv: "avancé",
+    étoile: 4,
+    type: "IDE",
+  },
+  {
+    id: 7,
+    nom: "Visual Studio core",
+    icon: iVisual,
+    niv: "avancé",
+    étoile: 4,
+    type: "IDE",
+  },
+  {
+    id: 8,
+    nom: "Webstorm",
+    icon: iItellij,
+    niv: "avancé",
+    étoile: 4,
+    type: "IDE",
+  },
+  {
+    id: 9,
+    nom: "Visual studio",
+    icon: IVisStudio,
+    niv: "avancé",
+    étoile: 4,
+    type: "IDE",
+  },
+  {
+    id: 10,
+    nom: "C-sharp",
+    icon: iCsharp,
+    niv: "avancé",
+    étoile: 4,
+    type: "BackEnd",
+  },
+  {
+    id: 11,
+    nom: "SQL",
+    icon: Isql,
+    niv: "Avancé",
+    étoile: 4,
+    type: "Base de donées",
+  },
+  {
+    id: 12,
+    nom: "Mongoose db",
+    icon: Imongo,
+    niv: "débutant",
+    étoile: 2,
+    type: "Base de donées",
+  },
+  {
+    id: 13,
+    nom: "Postgres",
+    icon: Ipostgres,
+    niv: "Avancé",
+    étoile: 4,
+    type: "Base de donées",
+  },
+  {
+    id: 13,
+    nom: "JavaScript",
+    icon: Ijs,
+    niv: "Avancé",
+    étoile: 4,
+    type: "FrontEnd",
   },
 ];

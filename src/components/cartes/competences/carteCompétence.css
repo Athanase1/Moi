@@ -1,0 +1,37 @@
+.carte-com{
+    width: 300px;
+    height: 100px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+    flex-direction: column;
+    border: 2px solid rgba(255, 255, 255, 0.1); /* optionnel, léger contour */
+    border-radius: 10px;
+    transition: all .5s ease;
+    opacity: .8;
+}
+.carte-com:hover{
+    opacity: 1;
+}
+.imgEtNom{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.carte-com img{
+    height: 25px;
+    width: auto;
+    max-width: 100%;
+    border-radius: 20px;
+}
+.carte-com h1{
+    font-size: 16px !important;
+    color: gray;
+}
+.carte-com p{
+    color: gray;
+}

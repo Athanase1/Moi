@@ -4,32 +4,34 @@ export default function Hero() {
   const navigate = useNavigate();
 
   return (
-    <div className="heroe section">
+    <section className="hero">
       <div className="intro">
-        <h1>Athanase Kpan</h1>
-        <p>Développeur Web & Mobile full-Stack junior</p>
-        <p>
+        <h1>Salut, moi c'est Athanase</h1>
+        <h5>Développeur Web & Mobile full-Stack junior</h5>
+        <h6 id="sl">
           Passionné par le code, je transforme vos idées en solutions numériques
           innovantes.
-        </p>
+        </h6>
       </div>
       <div className="btns">
         <button
           onClick={() => {
             navigate("/projects");
           }}
+          
         >
           Voir mon travail
         </button>
-        <button
+        <button 
           onClick={() => {
             navigate("/contact");
           }}
+          id="btn2"
         >
           Me contacter
         </button>
       </div>
-      <div className="social">
+      <div className="social" id="divS">
         <a href="https://www.facebook.com/Jesus.love.you.forever.bro.sis?mibextid=LQQJ4d">
           <i className="bi bi-facebook"></i>
         </a>
@@ -41,6 +43,6 @@ export default function Hero() {
           <i className="bi bi-linkedin"></i>
         </a>
       </div>
-    </div>
+    </section>
   );
 }

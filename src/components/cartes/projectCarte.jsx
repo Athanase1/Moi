@@ -1,19 +1,21 @@
+
 import "./projectCarte.css";
-export default function ProjectCarte({ project }) {
+export default function ProjectCarte({ project, onClick }) {
   return (
     <div className="carte-container">
-      <div className="carteImgs">
-        {project.icons.map((icon, index) => (
-          <div className="imgCon" key={index}>
-            <img src={icon} alt="icon" />
-          </div>
+    
+        <img src={project.imgs[0]} alt={`image du project ${project.nom}`} />
+     
+      <div className="cartedes">
+        <h4>{project.nom}</h4>
+        <p>{project.titre}</p>
+        <div className="stack">
+         {project.stack_technique.map((li, index) =>(
+          <li key={index}>{li}</li>
         ))}
+      </div> 
       </div>
-      <div className="carteCorps">
-        <h1>{project.nom}</h1>
-        <p>{project.desc}</p>
-      </div>
-      <button>savoir plus</button>
+      <button onClick={onClick}>Savoir plus</button>
     </div>
   );
 }
