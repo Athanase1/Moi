@@ -86,6 +86,7 @@ export const projects = [
       "Structurer correctement les useEffect et gérer les dépendances",
       "Protéger les clés d’API lors du déploiement backend",
     ],
+    lien:"athanase1.github.io/resto-littlelemon/"
   },
   {
     id: 1,
@@ -130,6 +131,7 @@ export const projects = [
       "Gérer correctement la persistance du numéro de téléphone dans le navigateur",
       "Adapter le système aux contraintes de performances en production",
     ],
+    lien:"www.distributionskoba.com"
   },
 ];
 
@@ -147,7 +149,7 @@ export const compentences = [
     nom: "Node.js",
     icon: iNode,
     niv: "Intermédiaire",
-    étoile: 3,
+    étoile: 4,
     type: "BackEnd",
   },
   {

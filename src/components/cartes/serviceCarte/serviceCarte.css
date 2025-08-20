@@ -5,28 +5,33 @@
   justify-content: flex-start;
   position: relative;
   height: 350px;
-  min-width: 300px;
+  min-width: 280px;
   width: 350px;
   max-width: 100%;
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: 20px;
-  box-shadow: 0 2px 6px #20262e;
-  transition: opacity 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
   cursor: pointer;
-  opacity: 0.8;
+  background-color: #fff;
+  opacity: 0.9;
 }
+
 .serviceCarte-container:hover {
   opacity: 1;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.2);
 }
+
 .serviceCarte-container h1 {
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 1.2rem;
+  font-weight: 500;
   width: 100%;
   text-align: center;
-  text-overflow: clip;
-  text-wrap: wrap;
-  word-spacing: 0.1rem;
+  word-wrap: break-word;
+  margin-bottom: 1rem;
 }
+
 .sCorps {
   width: 100%;
   padding: 1rem;
@@ -37,17 +42,14 @@
   align-items: center;
   justify-content: center;
   bottom: 10px;
-  left: 50% translateX(-50%);
+  left: 50%;
+  transform: translateX(-50%);
 }
+
 .sCorps p {
   text-align: center;
-}
-
-
-.icon .bi {
-  font-size: 100px;
-
-  display: block;
+  font-size: 0.9rem;
+  color: #555;
 }
 
 .icon {
@@ -56,12 +58,48 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 100%;
+  margin-bottom: 1rem;
 }
+
+.icon .bi {
+  font-size: 4rem;
+  color: #58a6ff;
+  display: block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.serviceCarte-container:hover .icon .bi {
+  transform: scale(1.1);
+  color: #1b232e;
+}
+
+/* ==================== Responsive ==================== */
+@media screen and (max-width: 1024px) {
+  .serviceCarte-container {
+    width: 45%;
+    height: 300px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .serviceCarte-container {
+    width: 90%;
     background: none;
-    border: 2px solid black;
-    max-width: 100%;
+    border: 2px solid #1b232e;
+    box-shadow: none;
+    padding: 1rem;
+    opacity: 1;
+  }
+
+  .icon .bi {
+    font-size: 3rem;
+  }
+
+  .serviceCarte-container h1 {
+    font-size: 1rem;
+  }
+
+  .sCorps p {
+    font-size: 0.85rem;
   }
 }

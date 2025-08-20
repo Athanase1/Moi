@@ -1,0 +1,24 @@
+.entete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 100%;
+  padding: 0.5rem;
+  margin: 0.2rem;
+}
+.entete h1 {
+  font-size: 25px !important;
+  font-weight: bold;
+}
+.entete .bi{
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .entete {
+    box-shadow: 0 10px 30px rgba(41, 48, 59, 0.6);
+  }
+}

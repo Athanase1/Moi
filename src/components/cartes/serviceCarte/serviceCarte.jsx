@@ -1,5 +1,5 @@
 import "./serviceCarte.css";
-export default function ServiceCarte({ service }) {
+export default function ServiceCarte({ service, onclick }) {
   return (
     <div className="serviceCarte-container">
         <div className="icon">
@@ -8,7 +8,7 @@ export default function ServiceCarte({ service }) {
       <div className="sCorps">
            <h1>{service.nom}</h1>
        <p>{service.services}</p>
-          <button>acquérir</button>
+          <button onPointerDown={onclick}>acquérir</button>
       </div>
     </div>
   );

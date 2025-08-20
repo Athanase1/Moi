@@ -167,6 +167,9 @@ footer {
   background-color: #c9d1d9;
   color: #0D1117 !important;
 }
+footer p{
+  color: #0D1117 !important;
+}
 .social {
   display: flex;
   justify-content: center;
@@ -205,6 +208,10 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+ 
+}
+.date p{
+   color: #0D1117 !important;
 }
 /******************************************************media queries*******************************/
 @media screen and (max-width: 768px) {

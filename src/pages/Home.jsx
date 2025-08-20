@@ -8,12 +8,62 @@ import About from "./About";
 import Contact from "./Contact";
 import CarteCompetence from "../components/cartes/competences/carteCompetence";
 import { FaTimes } from "react-icons/fa";
+import Entete from "../components/links/dropDown";
 
 export default function Home() {
   const [project, setProj] = useState({});
   const [affiche, setAffiche] = useState(false);
-  const [index, setIndex] = useState(0)
-   const prevImage = () => {
+  const [entete, setEntetes] = useState({
+    frontend: false,
+    backend: false,
+    bd: false,
+    ide: false,
+  });
+  const [champs, setChamps] = useState({
+    nom: "John Doe",
+    email: "johnDoe@gmaail.com",
+    message: "Je veux un site web",
+  });
+  const gererChangement = (e) => {
+    const { name, value } = e.target;
+
+    // Si c'est le champ "message", on limite à 100 mots
+    if (name === "message") {
+      const mots = value.trim().split(/\s+/);
+      if (mots.length > 100) return; // ignore si >100 mots
+    }
+
+    setChamps((prev) => ({
+      ...prev,
+      [name]: value, // mise à jour dynamique selon le champ modifié
+    }));
+  };
+
+  const ouvrirEnteteUnique = (key) => {
+    setEntetes((prev) => {
+      const estDejaOuvert = prev[key]; // true ou false
+
+      if (estDejaOuvert) {
+        // 👉 Si déjà ouvert, on le ferme
+        return {
+          ...prev,
+          [key]: false,
+        };
+      } else {
+        // 👉 Sinon on ferme tout et on ouvre seulement lui
+        return {
+          frontend: false,
+          backend: false,
+          bd: false,
+          ide: false,
+          [key]: true,
+        };
+      }
+    });
+  };
+
+  const [index, setIndex] = useState(0);
+  const prevImage = () => {
     setIndex((prev) => (prev === 0 ? project.imgs.length - 1 : prev - 1));
   };
 
@@ -41,11 +91,20 @@ export default function Home() {
       hiddenElements.forEach((el) => observer.unobserve(el));
     };
   }, []);
+  const scrollToSectionProject = () => {
+    document.getElementById("proj").scrollIntoView({ behavior: "smooth" });
+  };
+  const scrollToSectionContact = () => {
+    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="home-container">
-      <Hero />
-      <h3 className="h1">Voir mes projects les plus recents</h3>
+      <Hero
+        scollContact={scrollToSectionContact}
+        scrollProj={scrollToSectionProject}
+      />
+      <h3 id="proj">Voir mes projects les plus recents</h3>
       <section>
         <div className="projects hidden">
           {projects.map((project, index) => (
@@ -57,79 +116,105 @@ export default function Home() {
               <ProjectCarte
                 project={project}
                 onClick={() => {
-                  setProj(project), setAffiche(!affiche);
+                  setProj(project), setAffiche(!affiche), setIndex(0);
                 }}
               />
             </div>
           ))}
         </div>
       </section>
-      <h3>À propos de moi</h3>
+      <h3 id="about">À propos de moi</h3>
       <section>
         <About />
       </section>
-      <h3>Mes compétences</h3>
+      <h3 id="competence">Mes compétences</h3>
       <section>
         <div className="hidden competences">
-          <h6>Front-End</h6>
-          <div className="comListes">
-            {compentences
-              .filter((compet) => compet.type === "FrontEnd")
-              .map((compentence, index) => (
-                <div
-                  className="fadeIn"
-                  style={{ animationDelay: `${index * 0.5}s` }}
-                  key={compentence.id}
-                >
-                  <CarteCompetence competence={compentence} />
-                </div>
-              ))}
-          </div>
-          <h6>BackEnd</h6>
-          <div className="comListes">
-            {compentences
-              .filter((compet) => compet.type === "BackEnd")
-              .map((compentence, index) => (
-                <div
-                  className="fadeIn"
-                  style={{ animationDelay: `${index * 0.5}s` }}
-                  key={compentence.id}
-                >
-                  <CarteCompetence competence={compentence} />
-                </div>
-              ))}
-          </div>
-          <h6>IDE</h6>
-          <div className="comListes">
-            {compentences
-              .filter((compet) => compet.type === "IDE")
-              .map((compentence, index) => (
-                <div
-                  className="fadeIn"
-                  style={{ animationDelay: `${index * 0.5}s` }}
-                  key={compentence.id}
-                >
-                  <CarteCompetence competence={compentence} />
-                </div>
-              ))}
-          </div>
-          <h6>Base de données </h6>
-          <div className="comListes">
-            {compentences
-              .filter((compet) => compet.type === "Base de donées")
-              .map((compentence, index) => (
-                <div
-                  className="fadeIn"
-                  style={{ animationDelay: `${index * 0.5}s` }}
-                  key={compentence.id}
-                >
-                  <CarteCompetence competence={compentence} />
-                </div>
-              ))}
-          </div>
+          <Entete
+            titre="Front-End"
+            drop={entete.frontend}
+            onClick={() => ouvrirEnteteUnique("frontend")}
+          />
+          {entete.frontend && (
+            <div className="comListes">
+              {compentences
+                .filter((compet) => compet.type === "FrontEnd")
+                .map((compentence, index) => (
+                  <div
+                    className="fadeIn"
+                    style={{ animationDelay: `${index * 0.5}s` }}
+                    key={compentence.id}
+                  >
+                    <CarteCompetence competence={compentence} />
+                  </div>
+                ))}
+            </div>
+          )}
+          <Entete
+            titre="Back-End"
+            drop={entete.backend}
+            onClick={() => ouvrirEnteteUnique("backend")}
+          />
+
+          {entete.backend && (
+            <div className="comListes">
+              {compentences
+                .filter((compet) => compet.type === "BackEnd")
+                .map((compentence, index) => (
+                  <div
+                    className="fadeIn"
+                    style={{ animationDelay: `${index * 0.5}s` }}
+                    key={compentence.id}
+                  >
+                    <CarteCompetence competence={compentence} />
+                  </div>
+                ))}
+            </div>
+          )}
+          <Entete
+            titre="IDE"
+            drop={entete.ide}
+            onClick={() => ouvrirEnteteUnique("ide")}
+          />
+
+          {entete.ide && (
+            <div className="comListes">
+              {compentences
+                .filter((compet) => compet.type === "IDE")
+                .map((compentence, index) => (
+                  <div
+                    className="fadeIn"
+                    style={{ animationDelay: `${index * 0.5}s` }}
+                    key={compentence.id}
+                  >
+                    <CarteCompetence competence={compentence} />
+                  </div>
+                ))}
+            </div>
+          )}
+          <Entete
+            titre="Base de données"
+            drop={entete.bd}
+            onClick={() => ouvrirEnteteUnique("bd")}
+          />
+          {entete.bd && (
+            <div className="comListes">
+              {compentences
+                .filter((compet) => compet.type === "Base de donées")
+                .map((compentence, index) => (
+                  <div
+                    className="fadeIn"
+                    style={{ animationDelay: `${index * 0.5}s` }}
+                    key={compentence.id}
+                  >
+                    <CarteCompetence competence={compentence} />
+                  </div>
+                ))}
+            </div>
+          )}
         </div>
       </section>
-      <h3 className="h1">Voir mes services offerts</h3>
+      <h3 id="service">Voir mes services offerts</h3>
       <section>
         <div className="projects hidden">
           {Services.map((service, index) => (
@@ -138,33 +223,44 @@ export default function Home() {
               style={{ animationDelay: `${index * 0.5}s` }}
               key={service.id}
             >
-              <ServiceCarte service={service} key={service.id} />
+              <ServiceCarte
+                service={service}
+                key={service.id}
+                onclick={scrollToSectionContact}
+              />
             </div>
           ))}
         </div>
       </section>
-      <h3 className="h1">Me Contacter</h3>
+      <h3 id="contact">Me Contacter</h3>
 
       <section>
-        <Contact />
+        <Contact champs={champs} handleChange={gererChangement} />
       </section>
       {affiche && (
         <div className="projectPresentaion">
           <div className="x">
-               <FaTimes size={25}  color="black" onClick={() =>{
-                setAffiche(!affiche)
-               }}/>
+            <FaTimes
+              size={25}
+              color="black"
+              onClick={() => {
+                setAffiche(!affiche);
+              }}
+            />
+            <a href={`https://${project.lien}`} id="lienProj">
+              Voir site
+            </a>
           </div>
-       
+
           <div className="projectCorps">
             <div className="projectsImgs">
-               <img src={project.imgs[index]} alt={project.titre} />
-               <div className="bis">
+              <img src={project.imgs[index]} alt={project.titre} />
+              <div className="bis">
                 <i onClick={prevImage} className="bi bi-chevron-left"></i>
                 <i onClick={nextImage} className="bi bi-chevron-right"></i>
-               </div>
+              </div>
             </div>
-           
+
             <div className="details">
               <h5>{project.titre}</h5>
               <p>{project.desc}</p>

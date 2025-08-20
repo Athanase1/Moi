@@ -11,9 +11,7 @@ export default function Header({ affiche, setAffiche }) {
           <span>e</span>
           <span>v</span>
         </h1>
-       
       </div>
-     
     </header>
   );
 }

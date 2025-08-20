@@ -17,6 +17,9 @@ export default function Footer(){
 
   const dateString = now.toLocaleDateString("fr-FR", { weekday: "long", day: "2-digit", month: "long", year: "numeric" });
   const tz =  Intl.DateTimeFormat().resolvedOptions().timeZone || "Fuseau local";
+     const scrollToSection = (nom) => {
+    document.getElementById(nom).scrollIntoView({ behavior: "smooth" });
+  };
     return <footer>
         <div className="footerDiv">
 
@@ -24,10 +27,18 @@ export default function Footer(){
        <div className="liens">
         <ul>
             <h6>access rapides</h6>
-            <li>accueil</li>
-            <li>à propos</li>
-            <li>projects</li>
-            <li>contact</li>
+            <li onClick={() =>{
+              scrollToSection("hero")
+            }}>accueil</li>
+            <li onClick={() =>{
+              scrollToSection("about")
+            }}>à propos</li>
+            <li onClick={() =>{
+              scrollToSection("proj")
+            }}>projects</li>
+            <li onClick={() =>{
+              scrollToSection("contact")
+            }}>contact</li>
         </ul>
        </div>
        <div className="date">

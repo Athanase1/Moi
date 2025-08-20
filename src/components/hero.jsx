@@ -1,10 +1,6 @@
-import { useNavigate } from "react-router-dom";
-
-export default function Hero() {
-  const navigate = useNavigate();
-
+export default function Hero({ scollContact, scrollProj }) {
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
       <div className="intro">
         <h1>Salut, moi c'est Athanase</h1>
         <h5>Développeur Web & Mobile full-Stack junior</h5>
@@ -14,20 +10,8 @@ export default function Hero() {
         </h6>
       </div>
       <div className="btns">
-        <button
-          onClick={() => {
-            navigate("/projects");
-          }}
-          
-        >
-          Voir mon travail
-        </button>
-        <button 
-          onClick={() => {
-            navigate("/contact");
-          }}
-          id="btn2"
-        >
+        <button onPointerDown={scrollProj}>Voir mon travail</button>
+        <button onPointerDown={scollContact} id="btn2">
           Me contacter
         </button>
       </div>
